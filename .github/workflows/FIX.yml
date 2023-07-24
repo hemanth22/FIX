@@ -29,6 +29,9 @@ jobs:
       - name: Command to filter NewOrderSingle from FIX Message
         run: cat fix.log  | awk '{gsub(/35=D/,"____NewOrderSingle_____"); print}' |  awk '{gsub(/54=1/," ____BUY____"); print}' | awk '{gsub(/54=2/," ____SELL____"); print}'
 
+      - name: FIX Message progressing with AWK Script
+        run: awk -f FIXtest.awk fix.log
+
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
