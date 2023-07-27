@@ -163,6 +163,21 @@ gsub(/35=EA/,"______PayManagementReport_____");
 gsub(/35=EB/,"______PayManagementReportAck_____");
 gsub(/35=DY/,"______PayManagementRequest_____");
 gsub(/35=DZ/,"______PayManagementRequestAck_____");
+gsub(/39=0/,"______New_____");
+gsub(/39=1/,"______PartiallyFilled_____");
+gsub(/39=2/,"______Filled_____");
+gsub(/39=3/,"______DoneForDay_____");
+gsub(/39=4/,"______Canceled_____");
+gsub(/39=5/,"______Replaced_____");
+gsub(/39=6/,"______PendingCancel_____");
+gsub(/39=7/,"______Stopped_____");
+gsub(/39=8/,"______Rejected_____");
+gsub(/39=9/,"______Suspended_____");
+gsub(/39=A/,"______PendingNew_____");
+gsub(/39=B/,"______Calculated_____");
+gsub(/39=C/,"______Expired_____");
+gsub(/39=D/,"______AcceptedForBidding_____");
+gsub(/39=E/,"______PendingReplace_____");
 
 print;
 }
