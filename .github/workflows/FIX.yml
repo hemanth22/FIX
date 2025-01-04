@@ -32,6 +32,9 @@ jobs:
       - name: FIX Message progressing with AWK Script
         run: awk -f FIXtest.awk fix.log
 
+      - name: Convert SOH to |
+        run: sed -i 's/\x01/|/g' FIXParser.sh
+
       - name: FIX Parser Execution
         run: ./FIXParser.sh
 

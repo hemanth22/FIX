@@ -6,8 +6,16 @@ awk -F '|' '{
     # Here you would use the information from the FIX44.xml (loaded into a data structure in awk) to interpret `tag` and `value`
     switch (tag) {
       case 35:
-        if (value == 0) print "Heartbeat";
-        if (value == 8) print "Execution Report";
+        if (value == 0) print "MsgType: Heartbeat";
+        if (value == 8) print "MsgType: ExecutionReport";
+        if (value == "A") print "MsgType: Logon";
+        if (value == "D") print "MsgType: NewOrderSingle";
+        if (value == "F") print "MsgType: OrderCancelRequest";
+        if (value == "G") print "MsgType: OrderCancelReplaceRequest";
+        if (value == "5") print "MsgType: Logout";
+        if (value == "3") print "MsgType: Reject";
+        if (value == "Z") print "MsgType: QuoteCancel";
+        if (value == "4") print "MsgType: OrderStatusRequest";
         break;
       case 8:
         print "\nFIX Version: " value;
