@@ -33,7 +33,7 @@ jobs:
         run: awk -f FIXtest.awk fix.log
 
       - name: Convert SOH to |
-        run: sed -i 's/\x01/|/g' FIXParser.sh
+        run: sed -i 's/\x01/|/g' input_fix_messages.txt
 
       - name: FIX Parser Execution
         run: sh ./FIXParser.sh
