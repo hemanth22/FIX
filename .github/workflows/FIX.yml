@@ -36,7 +36,7 @@ jobs:
         run: sed -i 's/\x01/|/g' FIXParser.sh
 
       - name: FIX Parser Execution
-        run: ./FIXParser.sh
+        run: sh ./FIXParser.sh
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
