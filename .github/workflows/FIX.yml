@@ -38,8 +38,11 @@ jobs:
       - name: FIX Parser Execution
         run: sh ./FIXParser.sh
 
+      - name: FIX Parser with tr command
+        run: grep -ia BANZAI fix_raw_messages.log | tr '\01\02\03\04\05' '|{}:;'
+
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          alias t='tr '\''\01\02\03\04\05'\'' '\''|{}:;'\'''
+          t() { tr '\01\02\03\04\05' '|{}:;'; }
           grep -ia BANZAI fix_raw_messages.log | t
